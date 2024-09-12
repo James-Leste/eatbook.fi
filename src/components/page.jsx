@@ -21,7 +21,7 @@ export function Page() {
             <nav className="container mx-auto flex items-center justify-between p-4">
                 <div className="flex items-center space-x-4">
                     <Image
-                        src="/src/app/favicon.ico"
+                        src="/restaurant.png"
                         alt="Logo"
                         width={40}
                         height={40}
