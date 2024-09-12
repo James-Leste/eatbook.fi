@@ -13,6 +13,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import logo from "../public/restaurant.png";
 
 export function Page() {
     return (
@@ -20,12 +21,7 @@ export function Page() {
             {/* Navigation */}
             <nav className="container mx-auto flex items-center justify-between p-4">
                 <div className="flex items-center space-x-4">
-                    <Image
-                        src="/restaurant.png"
-                        alt="Logo"
-                        width={40}
-                        height={40}
-                    />
+                    <Image src={logo} alt="Logo" width={40} height={40} />
                     <span className="text-3xl font-bold">EatBook</span>
                 </div>
                 <NavigationMenu>
