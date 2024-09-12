@@ -13,7 +13,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import logo from "../public/restaurant.png";
+import logo from "../public/finland.png";
 
 export function Page() {
     return (
