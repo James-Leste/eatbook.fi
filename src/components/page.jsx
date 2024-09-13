@@ -14,6 +14,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Card, CardContent } from "@/components/ui/card";
 import logo from "../public/finland.png";
 
 export function Page() {
@@ -272,6 +273,136 @@ export function Page() {
                         </div>
                     </div>
                 ))}
+            </section>
+            <section className="container mx-auto py-12 md:py-20 px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                        <CardContent className="p-6">
+                            <h3 className="text-2xl font-bold mb-2">
+                                Large Feature 1
+                            </h3>
+                            <p className="text-sm mb-4">
+                                Detailed description of the large feature goes
+                                here.
+                            </p>
+                            <div className="aspect-video bg-gray-700 rounded-lg overflow-hidden">
+                                <Image
+                                    src="/placeholder.svg"
+                                    alt="Large Feature 1"
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </CardContent>
+                    </Card>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <Card className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <CardContent className="p-4">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Small Feature 1
+                                </h3>
+                                <p className="text-xs mb-2">
+                                    Brief description here.
+                                </p>
+                                <div className="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt="Small Feature 1"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <CardContent className="p-4">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Small Feature 2
+                                </h3>
+                                <p className="text-xs mb-2">
+                                    Brief description here.
+                                </p>
+                                <div className="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt="Small Feature 2"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <CardContent className="p-4">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Small Feature 3
+                                </h3>
+                                <p className="text-xs mb-2">
+                                    Brief description here.
+                                </p>
+                                <div className="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt="Small Feature 3"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                            <CardContent className="p-4">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Small Feature 4
+                                </h3>
+                                <p className="text-xs mb-2">
+                                    Brief description here.
+                                </p>
+                                <div className="aspect-square bg-gray-700 rounded-lg overflow-hidden">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt="Small Feature 4"
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            </section>
+            <section className="container mx-auto py-12 md:py-20 px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {[1, 2, 3, 4, 5, 6].map((index) => (
+                        <Card
+                            key={index}
+                            className="bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                        >
+                            <CardContent className="p-6">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Feature {index}
+                                </h3>
+                                <p className="text-sm mb-4">
+                                    Description of feature {index} goes here.
+                                </p>
+                                <div className="aspect-video bg-gray-700 rounded-lg overflow-hidden">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt={`Feature ${index}`}
+                                        width={400}
+                                        height={225}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
             </section>
             {/* Footer */}
             <footer className="bg-slate-800 py-12 px-4">
