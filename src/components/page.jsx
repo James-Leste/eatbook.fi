@@ -23,157 +23,161 @@ export function Page() {
     return (
         <div className="min-h-screen bg-slate-900 text-white">
             {/* Navigation */}
-            <nav className="container mx-auto flex items-center justify-between p-4">
-                <div className="flex items-center space-x-4">
-                    <Image src={logo} alt="Logo" width={40} height={40} />
-                    <span className="text-xl font-bold">RestaurantApp</span>
-                </div>
-                <div className="hidden md:block">
-                    <NavigationMenu>
-                        <NavigationMenuList className="flex justify-evenly align-middle">
-                            <NavigationMenuItem className="m-0 p-3.5">
-                                <NavigationMenuTrigger className="text-xl">
-                                    Product
-                                </NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                        <li className="row-span-3">
-                                            <NavigationMenuLink asChild>
-                                                <a
-                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="/"
-                                                >
-                                                    <div className="mb-2 mt-4 text-lg font-medium">
-                                                        RestaurantApp
-                                                    </div>
-                                                    <p className="text-sm leading-tight text-muted-foreground">
-                                                        All restaurants in one
-                                                        convenient app.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <li>
-                                            <NavigationMenuLink asChild>
-                                                <a href="/">
-                                                    <div className="text-sm font-medium leading-none">
-                                                        Restaurant Search
-                                                    </div>
-                                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        Find restaurants near
-                                                        you with ease.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <li>
-                                            <NavigationMenuLink asChild>
-                                                <a href="/">
-                                                    <div className="text-sm font-medium leading-none">
-                                                        Menu Browsing
-                                                    </div>
-                                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        Browse menus from
-                                                        various restaurants.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <li>
-                                            <NavigationMenuLink asChild>
-                                                <a href="/">
-                                                    <div className="text-sm font-medium leading-none">
-                                                        Order Tracking
-                                                    </div>
-                                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        Track your orders in
-                                                        real-time.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                    </ul>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem className="m-0 p-3.5">
-                                <NavigationMenuTrigger className="text-xl">
-                                    Pricing
-                                </NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                                        {[
-                                            {
-                                                title: "Basic Plan",
-                                                description:
-                                                    "For casual diners",
-                                            },
-                                            {
-                                                title: "Pro Plan",
-                                                description:
-                                                    "For food enthusiasts",
-                                            },
-                                            {
-                                                title: "Business Plan",
-                                                description:
-                                                    "For restaurant owners",
-                                            },
-                                            {
-                                                title: "Enterprise",
-                                                description:
-                                                    "Custom solutions for large chains",
-                                            },
-                                        ].map((plan) => (
-                                            <li key={plan.title}>
+            <nav className="fixed top-0 left-0 right-0 bg-slate-900 shadow-md z-50 border-b">
+                <div className="container mx-auto flex items-center justify-between p-4">
+                    <div className="flex items-center space-x-4">
+                        <Image src={logo} alt="Logo" width={40} height={40} />
+                        <span className="text-xl font-bold">RestaurantApp</span>
+                    </div>
+                    <div className="hidden md:block">
+                        <NavigationMenu>
+                            <NavigationMenuList className="flex justify-evenly align-middle">
+                                <NavigationMenuItem className="m-0 p-3.5">
+                                    <NavigationMenuTrigger className="text-xl">
+                                        Product
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                                            <li className="row-span-3">
                                                 <NavigationMenuLink asChild>
-                                                    <a href="/">
-                                                        <div className="text-sm font-medium leading-none">
-                                                            {plan.title}
+                                                    <a
+                                                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                                        href="/"
+                                                    >
+                                                        <div className="mb-2 mt-4 text-lg font-medium">
+                                                            RestaurantApp
                                                         </div>
-                                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                            {plan.description}
+                                                        <p className="text-sm leading-tight text-muted-foreground">
+                                                            All restaurants in
+                                                            one convenient app.
                                                         </p>
                                                     </a>
                                                 </NavigationMenuLink>
                                             </li>
-                                        ))}
-                                    </ul>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem className="m-0 p-3.5">
-                                <Link href="/" legacyBehavior passHref>
-                                    <NavigationMenuLink className="text-xl">
-                                        Documentation
-                                    </NavigationMenuLink>
-                                </Link>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem className="m-0 p-3.5">
-                                <Link href="/" legacyBehavior passHref>
-                                    <NavigationMenuLink className="text-xl">
-                                        Blog
-                                    </NavigationMenuLink>
-                                </Link>
-                            </NavigationMenuItem>
-                        </NavigationMenuList>
-                    </NavigationMenu>
-                </div>
-                <div className="hidden md:flex items-center space-x-4">
-                    <Link
-                        href="https://github.com"
-                        className="text-white hover:text-gray-300"
+                                            <li>
+                                                <NavigationMenuLink asChild>
+                                                    <a href="/">
+                                                        <div className="text-sm font-medium leading-none">
+                                                            Restaurant Search
+                                                        </div>
+                                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                            Find restaurants
+                                                            near you with ease.
+                                                        </p>
+                                                    </a>
+                                                </NavigationMenuLink>
+                                            </li>
+                                            <li>
+                                                <NavigationMenuLink asChild>
+                                                    <a href="/">
+                                                        <div className="text-sm font-medium leading-none">
+                                                            Menu Browsing
+                                                        </div>
+                                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                            Browse menus from
+                                                            various restaurants.
+                                                        </p>
+                                                    </a>
+                                                </NavigationMenuLink>
+                                            </li>
+                                            <li>
+                                                <NavigationMenuLink asChild>
+                                                    <a href="/">
+                                                        <div className="text-sm font-medium leading-none">
+                                                            Order Tracking
+                                                        </div>
+                                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                            Track your orders in
+                                                            real-time.
+                                                        </p>
+                                                    </a>
+                                                </NavigationMenuLink>
+                                            </li>
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem className="m-0 p-3.5">
+                                    <NavigationMenuTrigger className="text-xl">
+                                        Pricing
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                            {[
+                                                {
+                                                    title: "Basic Plan",
+                                                    description:
+                                                        "For casual diners",
+                                                },
+                                                {
+                                                    title: "Pro Plan",
+                                                    description:
+                                                        "For food enthusiasts",
+                                                },
+                                                {
+                                                    title: "Business Plan",
+                                                    description:
+                                                        "For restaurant owners",
+                                                },
+                                                {
+                                                    title: "Enterprise",
+                                                    description:
+                                                        "Custom solutions for large chains",
+                                                },
+                                            ].map((plan) => (
+                                                <li key={plan.title}>
+                                                    <NavigationMenuLink asChild>
+                                                        <a href="/">
+                                                            <div className="text-sm font-medium leading-none">
+                                                                {plan.title}
+                                                            </div>
+                                                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                                {
+                                                                    plan.description
+                                                                }
+                                                            </p>
+                                                        </a>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem className="m-0 p-3.5">
+                                    <Link href="/" legacyBehavior passHref>
+                                        <NavigationMenuLink className="text-xl">
+                                            Documentation
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem className="m-0 p-3.5">
+                                    <Link href="/" legacyBehavior passHref>
+                                        <NavigationMenuLink className="text-xl">
+                                            Blog
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    </div>
+                    <div className="hidden md:flex items-center space-x-4">
+                        <Link
+                            href="https://github.com"
+                            className="text-white hover:text-gray-300"
+                        >
+                            <Github size={24} />
+                        </Link>
+                        <Button variant="secondary">Sign In</Button>
+                        <Button className="bg-green-500 hover:bg-green-600">
+                            Try for Free
+                        </Button>
+                    </div>
+                    <button
+                        className="md:hidden text-white"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        <Github size={24} />
-                    </Link>
-                    <Button variant="secondary">Sign In</Button>
-                    <Button className="bg-green-500 hover:bg-green-600">
-                        Try for Free
-                    </Button>
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </div>
-                <button
-                    className="md:hidden text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
             </nav>
             {/* Mobile Menu */}
             {mobileMenuOpen && (
@@ -231,7 +235,7 @@ export function Page() {
                 </div>
             )}
             {/* Hero Section */}
-            <section className="container mx-auto text-center py-12 md:py-20 px-4">
+            <section className="container mx-auto text-center py-12 md:py-20 px-4 mt-20">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6">
                     All Restaurants in One App
                 </h1>
@@ -239,6 +243,12 @@ export function Page() {
                     Discover, order, and enjoy food from any restaurant in your
                     city.
                 </p>
+                <Button className="bg-green-500 hover:bg-green-600 mt-5 mx-3 font-bold">
+                    Start journey
+                </Button>
+                <Button className="bg-gray-800 hover:bg-gray-500 mt-5 mx-3 font-bold">
+                    Documentation
+                </Button>
             </section>
             {/* Feature Blocks */}
             <section className="container mx-auto py-12 md:py-20 px-4">
