@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,18 +16,21 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Card, CardContent } from "@/components/ui/card";
 import logo from "../public/finland.png";
+import githubmark from "../public/github-mark/github-mark.svg";
 
 export function Page() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <div className="min-h-screen bg-slate-900 text-white">
+        <div className="min-h-screen bg-white text-black ">
             {/* Navigation */}
-            <nav className="fixed top-0 left-0 right-0 bg-slate-900 shadow-md z-50 border-b">
+            <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
                 <div className="container mx-auto flex items-center justify-between p-4">
                     <div className="flex items-center space-x-4">
                         <Image src={logo} alt="Logo" width={40} height={40} />
-                        <span className="text-xl font-bold">RestaurantApp</span>
+                        <span className="text-3xl font-bold px-10 m-0">
+                            Eatbook
+                        </span>
                     </div>
                     <div className="hidden md:block">
                         <NavigationMenu>
@@ -142,14 +145,14 @@ export function Page() {
                                         </ul>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
-                                <NavigationMenuItem className="m-0 p-3.5">
+                                <NavigationMenuItem className="m-2 p-3.5">
                                     <Link href="/" legacyBehavior passHref>
                                         <NavigationMenuLink className="text-xl">
                                             Documentation
                                         </NavigationMenuLink>
                                     </Link>
                                 </NavigationMenuItem>
-                                <NavigationMenuItem className="m-0 p-3.5">
+                                <NavigationMenuItem className="m-2 p-3.5">
                                     <Link href="/" legacyBehavior passHref>
                                         <NavigationMenuLink className="text-xl">
                                             Blog
@@ -162,17 +165,27 @@ export function Page() {
                     <div className="hidden md:flex items-center space-x-4">
                         <Link
                             href="https://github.com"
-                            className="text-white hover:text-gray-300"
+                            className="text-gray-700 hover:text-black"
                         >
-                            <Github size={24} />
+                            <Image
+                                src={githubmark}
+                                alt="Logo"
+                                width={20}
+                                height={20}
+                            />
                         </Link>
-                        <Button variant="secondary">Sign In</Button>
-                        <Button className="bg-green-500 hover:bg-green-600">
+                        <Button
+                            className="	opacity-100 bg-white hover:bg-gray-300 font-bold"
+                            variant="secondary"
+                        >
+                            Sign In
+                        </Button>
+                        <Button className="bg-gray-800 hover:bg-gray-950 font-bold">
                             Try for Free
                         </Button>
                     </div>
                     <button
-                        className="md:hidden text-white"
+                        className="md:hidden text-black"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -181,10 +194,10 @@ export function Page() {
             </nav>
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-slate-900 p-4">
+                <div className="fixed inset-0 z-50 bg-white p-4">
                     <div className="flex justify-end">
                         <button
-                            className="text-white"
+                            className="text-black"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             <X size={24} />
@@ -235,7 +248,7 @@ export function Page() {
                 </div>
             )}
             {/* Hero Section */}
-            <section className="container mx-auto text-center py-12 md:py-20 px-4 mt-20">
+            <section className="container mx-auto text-center pt-20 md:py-20 mt-20 md:mt-20   ">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6">
                     All Restaurants in One App
                 </h1>
@@ -243,15 +256,13 @@ export function Page() {
                     Discover, order, and enjoy food from any restaurant in your
                     city.
                 </p>
-                <Button className="bg-green-500 hover:bg-green-600 mt-5 mx-3 font-bold">
-                    Start journey
-                </Button>
-                <Button className="bg-gray-800 hover:bg-gray-500 mt-5 mx-3 font-bold">
-                    Documentation
+
+                <Button className="bg-gray-800 hover:bg-gray-950 mt-5 mx-3 font-bold">
+                    Start Your Journey
                 </Button>
             </section>
             {/* Feature Blocks */}
-            <section className="container mx-auto py-12 md:py-20 px-4">
+            <section className="container mx-auto py-10 md:py-10 px-4 m-0">
                 {[1, 2, 3].map((index) => (
                     <div
                         key={index}
